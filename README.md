@@ -120,7 +120,7 @@ GET /api/v1/spatial_layers/map
 
 ```
 # Example Response (Map Page)
-[map](./map.png)
+![map](./map.png)
 
 # Note
 * The API accepts and returns data in JSON format.
@@ -130,3 +130,27 @@ GET /api/v1/spatial_layers/map
 * The map endpoint displays the spatial layer marker on a Leaflet.js map. The marker shows a popup with the name and value of the spatial layer.
 * Please feel free to test the API using tools like cURL or Postman to create and retrieve spatial layer data. Additionally, access the map endpoint in your web browser to view the spatial layer on the map and interact with it by zooming in and out.
 
+
+## Authors
+
+👤 Taiwo Adetona
+
+- Github: [@taiwo2](https://github.com/taiwo2)
+
+- LinkedIn: [Taiwo Adetona](https://www.linkedin.com/in/taiwo-adetona/)
+
+- Twitter: [@TaiwoAdetona4](https://twitter.com/TaiwoAdetona4/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+MIT License
