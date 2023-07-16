@@ -130,7 +130,32 @@ GET /api/v1/spatial_layers/map
 * The map endpoint displays the spatial layer marker on a Leaflet.js map. The marker shows a popup with the name and value of the spatial layer.
 * Please feel free to test the API using tools like cURL or Postman to create and retrieve spatial layer data. Additionally, access the map endpoint in your web browser to view the spatial layer on the map and interact with it by zooming in and out.
 
+# Question 3 SQL Solution
+ To find the number of occurrences per region, you can use the following SQL query using psql:
 
+
+```
+SELECT c.region, COUNT(o.id) AS occurrence_count
+FROM countries AS c
+JOIN occurrences AS o ON c.id = o.country_id
+GROUP BY c.region;
+
+```
+This query joins the countries table with the occurrences table based on the country_id column. It then groups the results by the region column and counts the occurrences using the COUNT function.
+
+
+Result
+
+```
+   region   | occurrence_count
+------------+-----------------
+ Asia       |               2
+ Europe     |               1
+ South America |             2
+(3 rows)
+
+
+```
 ## Authors
 
 👤 Taiwo Adetona
