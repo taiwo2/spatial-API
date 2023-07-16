@@ -1,0 +1,31 @@
+<!-- app/views/api/v1/spatial_layers/map.html.erb -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map</title>
+  <%= stylesheet_link_tag 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css' %>
+  <%= javascript_include_tag 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js' %>
+</head>
+<body>
+  <div id="map" style="height: 500px;"></div>
+
+  <script>
+    var map = L.map('map').setView([37.7749, -122.4194], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Fetch spatial layer data from the API
+    fetch('/api/v1/spatial_layers?latitude=37.7749&longitude=-122.4194')
+      .then(response => response.json())
+      .then(data => {
+        var spatialLayer = L.marker([data.latitude, data.longitude]).addTo(map);
+        spatialLayer.bindPopup('Name: ' + data.name + '<br>Value: ' + data.value).openPopup();
+        map.setView([data.latitude, data.longitude], 13);
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  </script>
+</body>
+</html>

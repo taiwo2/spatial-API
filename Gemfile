@@ -12,6 +12,10 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
+gem 'leaflet-rails'
+
+gem 'rgeo'
+
 gem 'geocoder'
 
 gem "net-http"

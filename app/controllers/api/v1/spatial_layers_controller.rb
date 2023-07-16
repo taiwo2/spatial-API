@@ -16,7 +16,7 @@ class Api::V1::SpatialLayersController < ApplicationController
     spatial_layer = SpatialLayer.near([latitude, longitude], 1).first
 
     if spatial_layer
-      render json: { name: spatial_layer.name, value: spatial_layer.value }
+      render json: { name: spatial_layer.name, value: spatial_layer.value,latitude: spatial_layer.latitude, longitude: spatial_layer.longitude }
     else
       render json: { error: 'Spatial layer not found' }, status: :not_found
     end

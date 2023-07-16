@@ -6,6 +6,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- ... other meta tags and styles ... -->
+    <%= stylesheet_link_tag 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css' %>
+    <%= javascript_include_tag 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js' %>
+
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
